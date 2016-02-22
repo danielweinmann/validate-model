@@ -4,7 +4,6 @@ var validate = (function() {
 
   return function validate(validator, value) {
     if(!validator) throw new Error("Must pass validator parameter");
-    if(!value) throw new Error("Must pass value parameter");
     if(!validator.validate) throw new Error("Validator must have validate attribute");
     if(!Array.isArray(validator.validate)) throw new Error("Validator validate attribute must be an Array");
 
@@ -15,14 +14,13 @@ var validate = (function() {
       messages: []
     };
 
-
     for (var i = 0; i < validate.length; i++) {
       if (validate[i].validator === 'undefined') { continue; }
 
       var args = validate[i].arguments;
       args = !Array.isArray(args) ? [args] : args;
       var clonedArgs = args.slice(0);
-      clonedArgs.unshift(value);
+      clonedArgs.unshift(value || '');
 
       var message = validate[i].message || '';
   
@@ -55,7 +53,6 @@ var validate = (function() {
         }
         
         valid = validatorjs[validate[i].validator].apply(null, clonedArgs);
-        console.log('validator', validate[i].validator, clonedArgs, valid)
         if(!valid) {
           result.valid = false
           result.messages.push(message)  
