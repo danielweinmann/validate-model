@@ -23,7 +23,7 @@ var UserValidators = {
     title: 'Email',
     validate: [{
       validator: 'isLength',
-      arguments: [10, 255],
+      arguments: [20, 255],
       message: '{TITLE} is too short'
     },
     {
@@ -48,7 +48,7 @@ var user = {
 };
 
 var nameValidation = validate(UserValidators.name, user.name);
-// { valid: true, messages: null }
+// { valid: true, messages: [] }
 
 var emailValidation = validate(UserValidators.email, user.email);
 // { valid: false, messages: ['Email is too short', 'Email must be valid'] }
