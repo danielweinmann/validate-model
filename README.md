@@ -1,5 +1,7 @@
 # validate-model
 
+Validate model objects with [validator.js](https://github.com/chriso/validator.js). Read validator.js documentation to see available validators.
+
 ## Installation
 
 ```npm install validate-model --save```
