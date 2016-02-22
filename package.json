@@ -1,0 +1,26 @@
+{
+  "name": "validate-model",
+  "version": "0.0.1",
+  "description": "Validate model objects with validator.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielweinmann/validate-model.git"
+  },
+  "keywords": [
+    "validate",
+    "model",
+    "object",
+    "validator",
+    "validator.js"
+  ],
+  "author": "Daniel Weinmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielweinmann/validate-model/issues"
+  },
+  "homepage": "https://github.com/danielweinmann/validate-model#readme"
+}
