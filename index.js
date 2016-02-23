@@ -82,9 +82,22 @@ var validateAll = (function() {
 
 })();
 
+var validateFunction = (function() {
+
+  return function validateFunction(validators) {
+    return function validate(values) {
+      var validation = validateAll(validators, values);
+      if (!validation.valid) return validation.messages;
+      return {};
+    }
+  }
+
+})();
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     validate: validate,
-    validateAll: validateAll
+    validateAll: validateAll,
+    validateFunction: validateFunction
   };
 }
